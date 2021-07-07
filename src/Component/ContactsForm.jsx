@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './ContactsForm.css';
 
 class ContactsForm extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class ContactsForm extends Component {
         <h1>Create Contact</h1>
         <div>
           <label htmlFor="name">Name: </label>
-          <input
+          <input className="inputField"
             type="text"
             name="name"
             value={this.state.name}
@@ -43,7 +44,7 @@ class ContactsForm extends Component {
         </div>
         <div>
           <label htmlFor="phoneNumber">Phone Number: </label>
-          <input
+          <input className="inputField"
             type="number"
             name="phoneNumber"
             value={this.state.phoneNumber}
@@ -52,7 +53,7 @@ class ContactsForm extends Component {
         </div>
         <div>
           <label htmlFor="locaton">Location: </label>
-          <input
+          <input className="inputField"
             type="text"
             name="location"
             value={this.state.location}
