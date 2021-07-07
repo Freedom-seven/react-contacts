@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Contacts from './Component/Contacts';
 
 class App extends Component {
   constructor(props) {
@@ -32,12 +33,7 @@ class App extends Component {
   render() {
     const contacts = this.state.contacts.map((contact, index) => {
       return (
-        <div className="contact" key={index}>
-          <h1>Name: {contact.name}</h1>
-          <p>Phone Number: {contact.phoneNumber}</p>
-          <p>Location: {contact.location}</p>
-          <hr />
-        </div>
+        <Contacts contact={contact} key={index} />
       )
     })
     return (
