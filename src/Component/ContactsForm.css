@@ -4,7 +4,7 @@ body {
     font-weight: bolder;
     max-width: 30rem;
     margin: auto;
-    border: white 1px solid;
+    border: white 2px solid;
     border-radius: 10px;
 }
 
@@ -21,4 +21,31 @@ body {
     padding: 10px;
     margin-top: 5px;
     width: 15rem;
+}
+
+.inputField:hover {
+    margin-left: 10px;
+    background-color: darkgrey;
+    color: snow;
+    transition: all;
+}
+
+.submit {
+    background-color: wheat;
+    color: black;
+    padding: 10px;
+    font-weight: bolder;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.submit:hover {
+    margin-left: 10px;
+    background-color: skyblue;
+    color: snow;
+    transition: all;
+}
+
+.sub {
+    text-align: center;
 }
