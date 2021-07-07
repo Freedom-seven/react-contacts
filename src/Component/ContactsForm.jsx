@@ -31,39 +31,42 @@ class ContactsForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="contactForm">
-        <h1>Create Contact</h1>
-        <div>
-          <label htmlFor="name">Name: </label>
-          <input className="inputField"
-            type="text"
-            name="name"
-            value={this.state.name}
-            onChange={this.handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="phoneNumber">Phone Number: </label>
-          <input className="inputField"
-            type="number"
-            name="phoneNumber"
-            value={this.state.phoneNumber}
-            onChange={this.handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="locaton">Location: </label>
-          <input className="inputField"
-            type="text"
-            name="location"
-            value={this.state.location}
-            onChange={this.handleChange}
-          />
-        </div>
-        <div>
-          <button className="submit">Add Contact</button>
-        </div>
-      </form>
+        <>
+            <form onSubmit={this.handleSubmit} className="contactForm">
+                <h1>Create Contact</h1>
+                <div>
+                <label htmlFor="name">Name: </label>
+                <input className="inputField"
+                    type="text"
+                    name="name"
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                />
+                </div>
+                <div>
+                <label htmlFor="phoneNumber">Phone Number: </label>
+                <input className="inputField"
+                    type="number"
+                    name="phoneNumber"
+                    value={this.state.phoneNumber}
+                    onChange={this.handleChange}
+                />
+                </div>
+                <div>
+                <label htmlFor="locaton">Location: </label>
+                <input className="inputField"
+                    type="text"
+                    name="location"
+                    value={this.state.location}
+                    onChange={this.handleChange}
+                />
+                </div>
+                <div>
+                <button className="submit">Add Contact</button>
+                </div>
+            </form>
+            <div className="footer"></div>
+      </>
     );
   }
 }
