@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Contact = ({contact, index}) => {
+const Contacts = ({contact, index}) => {
     return (
         <div className="contact" key={index}>
           <h1>Name: {contact.name}</h1>
