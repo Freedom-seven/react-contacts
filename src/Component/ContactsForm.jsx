@@ -1,36 +1,65 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class ContactsForm extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            name: "",
-            phoneNumber: "",
-            location: ""
-        }
-    }
-
-    handleChange = (e) => {
-        const target = e.target;
-        const value = target.value;
-        const name = target.name;
-
-        this.setState = ({ [name]: value });
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      phoneNumber: "",
+      location: "",
     };
+  }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-    }
+  handleChange = (e) => {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit} className="contactForm">
-                <div><label htmlFor="name">Name: </label><input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></div>
-                <div><label htmlFor="phoneNumber">Phone Number: </label><input type="number" name="phonenumber" value={this.state.phoneNumber} onChange={this.handleChange} /></div>
-                <div><label htmlFor="locaton">Location: </label><input type="text" name="location" value={this.state.location} onChange={this.handleChange} /></div>
-            </form>
-        );
-    }
+    this.setState({ [name]:value });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit} className="contactForm">
+        <h2>Create New Contact</h2>
+        <div>
+          <label htmlFor="name">Name: </label>
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="phoneNumber">Phone Number: </label>
+          <input
+            type="number"
+            name="phoneNumber"
+            value={this.state.phoneNumber}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="locaton">Location: </label>
+          <input
+            type="text"
+            name="location"
+            value={this.state.location}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div>
+          <button className="submit">Add Contact</button>
+        </div>
+      </form>
+    );
+  }
 }
 
 export default ContactsForm;
