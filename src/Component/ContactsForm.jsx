@@ -15,14 +15,20 @@ class ContactsForm extends Component {
         const value = target.value;
         const name = target.name;
 
-        this.setState = ({ [name]: value })
+        this.setState = ({ [name]: value });
+    };
+
+    handleSubmit = (e) => {
+        e.preventDefault();
     }
 
     render() {
         return (
-            <div>
-                
-            </div>
+            <form onSubmit={this.handleSubmit} className="contactForm">
+                <div><label htmlFor="name">Name: </label><input type="text" name="name" value={this.state.name} onChange={this.handleChange} /></div>
+                <div><label htmlFor="phoneNumber">Phone Number: </label><input type="number" name="phonenumber" value={this.state.phoneNumber} onChange={this.handleChange} /></div>
+                <div><label htmlFor="locaton">Location: </label><input type="text" name="location" value={this.state.location} onChange={this.handleChange} /></div>
+            </form>
         );
     }
 }
