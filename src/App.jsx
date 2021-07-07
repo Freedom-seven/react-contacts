@@ -32,7 +32,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        Contact App
+        <h1>Name: Freedom</h1>
+        <p>Phone Number: 0240020202</p>
+        <p>Location: Kasoa</p>
       </div>
     );
   }
