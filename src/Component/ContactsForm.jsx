@@ -35,7 +35,7 @@ class ContactsForm extends Component {
         <form onSubmit={this.handleSubmit} className="contactForm">
             <h1>Create Contact</h1>
             <div>
-            <label htmlFor="name">Name: </label>
+            <label htmlFor="name">Name: </label><br/>
             <input className="inputField"
                 type="text"
                 name="name"
@@ -44,7 +44,7 @@ class ContactsForm extends Component {
             />
             </div>
             <div>
-            <label htmlFor="phoneNumber">Phone Number: </label>
+            <label htmlFor="phoneNumber">Phone Number: </label><br/>
             <input className="inputField"
                 type="number"
                 name="phoneNumber"
@@ -53,7 +53,7 @@ class ContactsForm extends Component {
             />
             </div>
             <div>
-            <label htmlFor="locaton">Location: </label>
+            <label htmlFor="locaton">Location: </label><br/>
             <input className="inputField"
                 type="text"
                 name="location"
