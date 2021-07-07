@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Contacts from './Component/Contacts';
 import ContactsForm from './Component/ContactsForm';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -44,9 +45,10 @@ class App extends Component {
       )
     })
     return (
-      <div>
+      <div  className="completeContact" >
         <ContactsForm addContact={this.handleAddContact} />
         {contacts}
+
       </div>
     );
   }
