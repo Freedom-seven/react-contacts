@@ -31,6 +31,12 @@ class App extends Component {
     }
   }
 
+  handleAddContact = (newContact) => {
+    this.setState({
+      contacts: [...this.state.contacts, newContact]
+    })
+  }
+
   render() {
     const contacts = this.state.contacts.map((contact, index) => {
       return (
@@ -39,7 +45,7 @@ class App extends Component {
     })
     return (
       <div>
-        <ContactsForm/>
+        <ContactsForm addContact={this.handleAddContact} />
         {contacts}
       </div>
     );
