@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Contacts from './Component/Contacts';
+import ContactsForm from './Component/ContactsForm';
 
 class App extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class App extends Component {
     })
     return (
       <div>
+        <ContactsForm/>
         {contacts}
       </div>
     );
