@@ -13,5 +13,12 @@ body {
     color: white;
     max-width: 30rem;
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.inputField {
+    margin-left: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    width: 15rem;
 }
