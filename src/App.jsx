@@ -35,6 +35,7 @@ class App extends Component {
         <h1>Name: Freedom</h1>
         <p>Phone Number: 0240020202</p>
         <p>Location: Kasoa</p>
+        <hr />
       </div>
     );
   }
