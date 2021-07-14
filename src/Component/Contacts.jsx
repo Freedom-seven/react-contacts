@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import EditContactsForm from './EditContactsForm'
+import EditContactsForm from './EditContactsForm';
+import './Contacts.css';
 
 
 const Contacts = ({contact, deleteContact, editContact }) => {
@@ -14,11 +15,11 @@ const Contacts = ({contact, deleteContact, editContact }) => {
   }
     return (
       <>
-        <div style={{margin: "2rem"}} className="contact">
+        <div className="contact">
           <h3>Name: {contact.name}</h3>
           <p>Phone Number: {contact.phoneNumber}</p>
           <p>Location: {contact.location}</p>
-          <div>
+          <div className="contact-btn">
             <button className="btn btn-success edit" onClick={handleShow}>Edit</button>
             <button className="btn btn-danger delete" onClick={handleDelete}>Delete</button>
             </div>
