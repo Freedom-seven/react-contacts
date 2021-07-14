@@ -1,42 +1,42 @@
-import React, { Component } from 'react';
-import ContactsForm from './Component/ContactsForm';
-import './App.css';
-import ContactsList from './Component/ContactsList';
+import React, { Component } from "react";
+import ContactsForm from "./Component/ContactsForm";
+import "./App.css";
+import ContactsList from "./Component/ContactsList";
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       contacts: [
         {
           name: "Freedom",
           phoneNumber: "0240020202",
-          location: "Kasoa"
+          location: "Kasoa",
         },
         {
           name: "Fiona",
           phoneNumber: "0240030303",
-          location: "East Legon"
+          location: "East Legon",
         },
         {
           name: "Patrick",
           phoneNumber: "0240040404",
-          location: "Trasacco"
+          location: "Trasacco",
         },
         {
           name: "Sika",
           phoneNumber: "0240050505",
-          location: "Obolo Estate"
-        }
-      ]
-    }
+          location: "Obolo Estate",
+        },
+      ],
+    };
   }
 
   handleAddContact = (newContact) => {
     newContact.id = Math.random().toString();
     this.setState({
-      contacts: [...this.state.contacts, newContact]
-    })
+      contacts: [...this.state.contacts, newContact],
+    });
   };
 
   handleDeleteContact = (contactId) => {
@@ -44,18 +44,25 @@ class App extends Component {
       return contact.id !== contactId;
     });
     this.setState({ contacts: contactSaved });
-  }
+  };
 
   handleEditContact = (updatedContact) => {
-
-  }
+    this.setState({
+      contacts: this.state.contacts.map((contact) =>
+        contact.id === updatedContact.id ? updatedContact : contact
+      ),
+    });
+  };
 
   render() {
     return (
-      <div  className="completeContact" >
+      <div className="completeContact">
         <ContactsForm addContact={this.handleAddContact} />
-        <ContactsList contacts={this.state.contacts} deleteContact={this.handleDeleteContact} editContact={this.handleEditContact} />
-
+        <ContactsList
+          contacts={this.state.contacts}
+          deleteContact={this.handleDeleteContact}
+          editContact={this.handleEditContact}
+        />
       </div>
     );
   }
