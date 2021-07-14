@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Contacts from './Component/Contacts';
 import ContactsForm from './Component/ContactsForm';
 import './App.css';
+import ContactsList from './Component/ContactsList';
 
 class App extends Component {
   constructor(props) {
@@ -39,15 +39,10 @@ class App extends Component {
   }
 
   render() {
-    const contacts = this.state.contacts.map((contact, index) => {
-      return (
-        <Contacts contact={contact} key={index} />
-      )
-    })
     return (
       <div  className="completeContact" >
         <ContactsForm addContact={this.handleAddContact} />
-        {contacts}
+        <ContactsList contacts={this.state.contacts} />
 
       </div>
     );
