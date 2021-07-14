@@ -33,16 +33,21 @@ class App extends Component {
   }
 
   handleAddContact = (newContact) => {
+    newContact.id = Math.random().toString();
     this.setState({
       contacts: [...this.state.contacts, newContact]
     })
+  };
+
+  handleDeleteContact = (contactId) => {
+
   }
 
   render() {
     return (
       <div  className="completeContact" >
         <ContactsForm addContact={this.handleAddContact} />
-        <ContactsList contacts={this.state.contacts} />
+        <ContactsList contacts={this.state.contacts} deleteContact={this.handleDeleteContact} />
 
       </div>
     );
