@@ -46,11 +46,15 @@ class App extends Component {
     this.setState({ contacts: contactSaved });
   }
 
+  handleEditContact = (updatedContact) => {
+
+  }
+
   render() {
     return (
       <div  className="completeContact" >
         <ContactsForm addContact={this.handleAddContact} />
-        <ContactsList contacts={this.state.contacts} deleteContact={this.handleDeleteContact} />
+        <ContactsList contacts={this.state.contacts} deleteContact={this.handleDeleteContact} editContact={this.handleEditContact} />
 
       </div>
     );
