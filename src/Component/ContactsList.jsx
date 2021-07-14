@@ -1,10 +1,10 @@
 import React from 'react';
 import Contacts from './Contacts';
 
-const ContactsList = ({contacts}) => {
+const ContactsList = ({contacts, deleteContact}) => {
     const contactsList = contacts.map((contact) => {
         return (
-          <Contacts contact={contact} />
+          <Contacts contact={contact} deleteContact={deleteContact} />
         );
       });
 
