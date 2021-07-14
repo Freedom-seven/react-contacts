@@ -5,9 +5,10 @@ class ContactsForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      phoneNumber: "",
-      location: "",
+      name: props.contact.name || "",
+      phoneNumber: props.contact.phoneNumber || "",
+      location: props.contact.location || "",
+      id: props.contact.id || "",
     };
   }
 
@@ -21,19 +22,19 @@ class ContactsForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addContact(this.state);
+    this.props.editContact(this.state);
     alert("Contact edited")
     this.setState({
         name: "",
         phoneNumber: "",
         location: ""
-    })
+    });
+    this.props.closeModal();
   }
 
   render() {
     return (
         <form onSubmit={this.handleSubmit} className="edit-contactForm">
-            <h1>Create Contact</h1>
             <div>
             <label htmlFor="name">Name: </label><br/>
             <input className="edit-inputField"
