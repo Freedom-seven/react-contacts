@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Contacts = ({contact, deleteContact}) => {
+const Contacts = ({contact, deleteContact, editContact }) => {
   const handleDelete = (e) => {
     deleteContact(contact.id);
   }
