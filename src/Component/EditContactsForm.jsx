@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./EditContact.css";
 
 
 class ContactsForm extends Component {
@@ -62,8 +63,8 @@ class ContactsForm extends Component {
                 onChange={this.handleChange}
             />
             </div>
-            <div className="sub">
-            <button className="submit">Save Changes</button>
+            <div className="edit-sub">
+            <button className="btn btn-success edit-submit">Save Changes</button>
             </div>
         </form>
     );
