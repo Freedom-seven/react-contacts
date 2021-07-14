@@ -40,7 +40,10 @@ class App extends Component {
   };
 
   handleDeleteContact = (contactId) => {
-
+    const contactSaved = this.state.contacts.filter((contact) => {
+      return contact.id !== contactId;
+    });
+    this.setState({ contacts: contactSaved });
   }
 
   render() {
