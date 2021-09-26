@@ -1,30 +1,5 @@
 const initialState = {
-    contacts: [
-        {
-          name: "Freedom",
-          phoneNumber: "0240020202",
-          location: "Kasoa",
-          id: Math.random().toString()
-        },
-        {
-          name: "Fiona",
-          phoneNumber: "0240030303",
-          location: "East Legon",
-          id: Math.random().toString()
-        },
-        {
-          name: "Patrick",
-          phoneNumber: "0240040404",
-          location: "Trasacco",
-          id: Math.random().toString()
-        },
-        {
-          name: "Sika",
-          phoneNumber: "0240050505",
-          location: "Obolo Estate",
-          id: Math.random().toString()
-        },
-      ]
+    contacts: []
 }
 
 const contactReducer = (state = initialState, action) => {
@@ -44,6 +19,10 @@ const contactReducer = (state = initialState, action) => {
           return contact.id !== action.payload;
         }); 
         return {...state, contacts: contactSaved};
+
+        case "SET_ALL_CONTACTS":
+          return {...state, contacts: action.payload};
+
         default:
             return state;
     }
