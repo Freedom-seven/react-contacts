@@ -1,5 +1,3 @@
-import { getFirestore } from "redux-firestore";
-
 export const addContact = (contact) => {
   contact.id = Math.random().toString();
 
@@ -29,5 +27,22 @@ export const deleteContact = (contact_id) => {
   return {
     type: "DELETE_CONTACT",
     payload: contact_id,
+  };
+};
+
+
+export const getAllContacts = () => {
+  return(dispatch, state, {getFirestore}) => {
+    getFirestore().collection("contacts").onSnapshot((snapshot)=>{
+      let contacts = [];
+      snapshot.forEach((doc) =>{
+        contacts.push(doc.data())
+      })
+
+      dispatch({
+        type: "SET_ALL_CONTACTS",
+        payload: contacts
+      });
+    },(error)=>{})
   };
 };
