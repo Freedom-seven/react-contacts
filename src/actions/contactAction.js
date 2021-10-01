@@ -52,7 +52,7 @@ export const getAllContacts = () => {
         (snapshot) => {
           let contacts = [];
           snapshot.forEach((doc) => {
-            contacts.push(doc.data());
+            contacts.push({...doc.data(), id:doc.id});
           });
 
           dispatch({
