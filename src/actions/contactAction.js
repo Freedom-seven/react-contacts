@@ -17,32 +17,50 @@ export const addContact = (contact) => {
 };
 
 export const editContact = (updatedContact) => {
-  return {
-    type: "EDIT_CONTACT",
-    payload: updatedContact,
+  return (dispatch, state, { getFirestore }) => {
+    getFirestore()
+      .collection("contacts")
+      .doc(updatedContact.id)
+      .set(updatedContact)
+      .then(() => {});
   };
+  // return {
+  //   type: "EDIT_CONTACT",
+  //   payload: updatedContact,
+  // };
 };
 
 export const deleteContact = (contact_id) => {
-  return {
-    type: "DELETE_CONTACT",
-    payload: contact_id,
+  return (dispatch, state, { getFirestore }) => {
+    getFirestore()
+      .collection("contacts")
+      .doc(contact_id)
+      .delete()
+      .then(() => {});
   };
+  // return {
+  //   type: "DELETE_CONTACT",
+  //   payload: contact_id,
+  // };
 };
 
-
 export const getAllContacts = () => {
-  return(dispatch, state, {getFirestore}) => {
-    getFirestore().collection("contacts").onSnapshot((snapshot)=>{
-      let contacts = [];
-      snapshot.forEach((doc) =>{
-        contacts.push(doc.data())
-      })
+  return (dispatch, state, { getFirestore }) => {
+    getFirestore()
+      .collection("contacts")
+      .onSnapshot(
+        (snapshot) => {
+          let contacts = [];
+          snapshot.forEach((doc) => {
+            contacts.push(doc.data());
+          });
 
-      dispatch({
-        type: "SET_ALL_CONTACTS",
-        payload: contacts
-      });
-    },(error)=>{})
+          dispatch({
+            type: "SET_ALL_CONTACTS",
+            payload: contacts,
+          });
+        },
+        (error) => {}
+      );
   };
 };
