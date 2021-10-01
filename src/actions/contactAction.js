@@ -47,7 +47,7 @@ export const deleteContact = (contact_id) => {
 export const getAllContacts = () => {
   return (dispatch, state, { getFirestore }) => {
     getFirestore()
-      .collection("contacts")
+      .collection("contacts").orderBy("name", "ace")
       .onSnapshot(
         (snapshot) => {
           let contacts = [];
